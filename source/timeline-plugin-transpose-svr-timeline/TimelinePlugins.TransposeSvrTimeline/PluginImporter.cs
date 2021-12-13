@@ -113,12 +113,14 @@ namespace TimelinePlugins.TransposeSvrTimeline
                     endUtcTime = DateTime.Parse(reader.GetString(3));
                     groupId = reader.GetInt32(4).ToString();
                     groupName = reader.GetString(5);
+                    /*
                     ApplicationLog.WriteInfo(
                         "Retrieved group ("+groupName+")," +
                         " activity ("+activityName+")," +
                         " startUtcTime ("+startUtcTime.ToString()+")," +
                         " endUtcTime ("+endUtcTime.ToString()+")"
                     );
+                    */
                     activities.Add(CreateActivity(
                         timeline.DisplayName + "-" + activityId,
                         startUtcTime.Add(DateTime.Now.Subtract(DateTime.UtcNow)),
