@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "52962e9a-df0e-433d-869a-7d34df6686d8": {
+      "ProjectGuid": "52962e9a-df0e-433d-869a-7d34df6686d8",
+      "DisplayName": "TimelinePlugins.Example",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>TimelinePlugins.TransposeSvrTimeline</RootNamespace>
+    <AssemblyName>TimelinePlugins.TransposeSvrTimeline</AssemblyName>
+
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\installable-plugin\$(Configuration)\Plugins\Packages\TimelinePlugins.TransposeSvrTimeline\Lib\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <OutputPath>..\..\..\installable-plugin\$(Configuration)\Plugins\Packages\TimelinePlugins.TransposeSvrTimeline\Lib\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\installable-plugin\$(Configuration)\Plugins\Packages\TimelinePlugins.TransposeSvrTimeline\Lib\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <OutputPath>..\..\..\installable-plugin\$(Configuration)\Plugins\Packages\TimelinePlugins.TransposeSvrTimeline\Lib\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\SourceImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Finkit.ManicTime.Client">
+      <HintPath>..\..\..\libs\Finkit.ManicTime.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Finkit.ManicTime.Common">
+      <HintPath>..\..\..\libs\Finkit.ManicTime.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Finkit.ManicTime.Shared">
+      <HintPath>..\..\..\libs\Finkit.ManicTime.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\SourceImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PluginIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PluginSpec.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(ProjectDir)PluginSpec.json&quot; &quot;$(TargetDir)..\PluginSpec.json&quot;&#xD;&#xA;copy &quot;$(ProjectDir)PluginIcon.png&quot; &quot;$(TargetDir)..\PluginIcon.png&quot;" />
+  </Target>
+
+</Project>
