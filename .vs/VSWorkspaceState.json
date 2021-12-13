@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\source",
-    "\\source\\timeline-plugin-transpose-svr-timeline"
+    "\\source\\timeline-plugin-transpose-svr-timeline",
+    "\\source\\timeline-plugin-transpose-svr-timeline\\TimelinePlugins.TransposeSvrTimeline"
   ],
-  "SelectedNode": "\\source\\timeline-plugin-transpose-svr-timeline\\TimelinePlugin.sln",
+  "SelectedNode": "\\source\\timeline-plugin-transpose-svr-timeline\\TimelinePlugins.TransposeSvrTimeline\\PluginImporter.cs",
   "PreviewInSolutionExplorer": false
 }

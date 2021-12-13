@@ -63,7 +63,7 @@ namespace TimelinePlugins.TransposeSvrTimeline
                 }
 
 
-                string dateFormat = "yyyy-dd-MM HH:mm:ss";
+                string dateFormat = "yyyy-MM-dd HH:mm:ss";
                 string fromUTC = fromLocalTime.ToUniversalTime().ToString(dateFormat);
                 string toUTC = toLocalTime.ToUniversalTime().ToString(dateFormat);
 
